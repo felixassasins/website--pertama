@@ -1,202 +1,258 @@
-:root
-{
-    --blue : #2C2546;
-    --dark-blue : #1B1535;
-    --green : #00EB09;
-    --white : #fff;
+:root {
+    --blue: #2C2546;
+    --dark-blue: #1B1535;
+    --green: #00EB09;
+    --white: #fff;
 }
 
-*
-{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style-type: none;
     box-sizing: border-box;
-    font-family: 'Tahoma';
+    font-family: 'Tahoma', sans-serif;
 }
 
-body
-{
+body {
     background-color: var(--dark-blue);
     color: var(--white);
     font-size: 15pt;
 }
 
-header
-{
+/* ===== HEADER ===== */
+header {
     text-align: center;
     background-color: var(--blue);
     position: fixed;
     width: 100%;
     font-weight: bold;
-    padding: 2%;
+    padding: 12px 16px;
     top: 0;
+    z-index: 999;
 }
 
-.title
-{
+.title {
     color: var(--green);
     border-bottom: 1px solid var(--white);
+    display: inline-block;
+    margin-bottom: 8px;
+    font-size: 18px;
 }
 
-.input-search
-{
-    width: 20%;
+.input-search {
+    width: 40%;
     border: none;
     border-radius: 0 0 0 20px;
-    padding: 2px;
+    padding: 4px 8px;
+    font-size: 13px;
 }
 
-.input-submit
-{
+.input-submit {
     margin-left: -5px;
     border: none;
     border-radius: 0 20px 0 0;
-    padding: 2px;
+    padding: 4px 10px;
     background-color: var(--green);
     color: var(--blue);
-    width: 5%;
     font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
 }
 
-nav
-{
-    margin-top: 15px;
+nav {
+    margin-top: 10px;
 }
 
-nav ul
-{
+nav ul {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-nav ul li a
-{
+nav ul li a {
     color: var(--green);
+    font-size: 13px;
 }
 
-nav ul li a:hover
-{
+nav ul li a:hover {
     border-bottom: 3px solid var(--white);
 }
 
-.slider
-{
-    margin-top: 10%;
-    display: block;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 65%;
-}
-
-.slider h4
-{
-    margin-top: 20%;
-}
-
-.slides
-{
-    display: flex;
-    width: 50rem;
+/* ===== SLIDER ===== */
+.slider {
+    margin-top: 120px;
+    width: 100%;
     overflow: hidden;
 }
 
-.slides img 
-{
-    border-radius: 10px;
+.slides {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
 }
 
-.slide
-{
-    width: 50rem;
+.slides img,
+.slide {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    display: block;
     transition: .5s;
 }
 
-.choose_1:checked ~ .slides > .s1
-{
-    margin-left: -0rem;
+/* ===== SECTION TITLE ===== */
+.title-p {
+    margin: 24px 16px 12px;
+    font-size: 20px;
+    color: var(--white);
 }
 
-.choose_2:checked ~ .slides > .s1
-{
-    margin-left: -50rem;
+/* ===== GRID PRODUK ===== */
+.populer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 16px 40px;
 }
 
-.overlay 
-{
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
+.populer img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
 }
 
-.overlay:target 
-{
+.judul-produk {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--green);
+}
+
+/* ===== OVERLAY / POPUP ===== */
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.75);
+    transition: opacity 300ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.overlay:target {
     visibility: visible;
     opacity: 1;
 }
 
-.popup 
-{
-    margin: 70px auto;
+.popup {
+    margin: 80px auto 40px;
     padding: 20px;
-    background: var(--dark-blue);
-    border-radius: 5px;
-    width: 30%;
+    background: var(--blue);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
     position: relative;
-    transition: all 5s ease-in-out;
 }
-  
+
 .popup h2 {
     margin-top: 0;
-    color: var(--white);
-    font-family: Tahoma, Arial, sans-serif;
+    color: var(--green);
+    font-size: 16px;
+    margin-bottom: 12px;
 }
 
 .popup .close {
     position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
+    top: 12px;
+    right: 16px;
+    font-size: 26px;
     font-weight: bold;
+    color: #aaa;
     text-decoration: none;
-    color: #333;
 }
 
-.popup .close:hover 
-{
-    color: #06D85F;
+.popup .close:hover {
+    color: var(--green);
 }
 
-.content 
-{
-    max-height: 30%;
-    width: 50%;
+.content {
+    font-size: 14px;
+    line-height: 1.8;
+    width: 100%;
 }
 
-.title-p
-{
-    margin-left: 60px;
+.harga {
+    color: var(--green);
+    font-weight: bold;
 }
 
-.populer
-{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    width: 90;
-    margin-left: 5%;
-    margin-right: 5%;
+.pesan {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    background: #25D366;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
 }
 
-.populer img
-{
-    border-radius: 30px;
+.pesan img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ===== RESPONSIVE TABLET ===== */
+@media (max-width: 768px) {
+    body { font-size: 13pt; }
+
+    .input-search { width: 50%; }
+    .input-submit { width: auto; }
+
+    .slider { margin-top: 110px; }
+
+    .populer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===== RESPONSIVE HP ===== */
+@media (max-width: 480px) {
+    header { padding: 10px 12px; }
+
+    .title { font-size: 16px; }
+
+    .input-search { width: 55%; font-size: 12px; }
+    .input-submit { font-size: 12px; padding: 4px 8px; }
+
+    nav ul { gap: 8px; }
+    nav ul li a { font-size: 12px; }
+
+    .slider { margin-top: 100px; }
+
+    .populer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 0 12px 30px;
+    }
+
+    .judul-produk { font-size: 12px; }
+
+    .popup {
+        width: 92%;
+        margin: 60px auto 20px;
+        padding: 16px;
+    }
+
+    .popup h2 { font-size: 14px; }
+    .content { font-size: 13px; }
 }
