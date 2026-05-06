@@ -1,373 +1,125 @@
 <!DOCTYPE html>
-<html long="en">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sxturn Store</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KATEPEDIA</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
-        <a href="/" class="title">SXTURNSTORE</a>
-        <input type="search" name="" id="" class="input-search" placeholder="Cari Sesuatu Disini...">
-        <button type="submit" class="input-submit">CARI</button>
-        <nav>
-            <ul>
-                <li><a href="#">BERANDA</a></li>
-                <li><a href="#">PRODUK</a></li>
-                <li><a href="#">TENTANG</a></li>
-                <li><a href="#">KONTAK</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <div id="home" class="slider">
-        <input type="radio" name="choose" id="" class="choose_1">
-        <input type="radio" name="choose" id="" class="choose_2">
-        <div class="slides">
-            <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-            <img src="images/slide-1.jpg" alt="" class="slide">
-          </a>
+<!-- HEADER -->
+<header class="header">
+    <div class="logo">KATEPEDIA</div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Cari produk...">
+        <button>Cari</button>
+    </div>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<!-- CART PANEL -->
+<div class="cart" id="cart">
+    <h3>Keranjang</h3>
+    <ul id="cart-list"></ul>
+    <div class="cart-footer">
+        <p>Total: <span>Rp <span id="total">0</span></span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+</div>
+
+<!-- SLIDER -->
+<section class="slider">
+    <img src="images/slide-1.jpg">
+</section>
+
+<h2 class="title">Produk Populer</h2>
+
+<!-- PRODUK -->
+<section class="products">
+
+    <div class="card">
+        <img src="images/images.jfif">
+        <div class="card-body">
+            <h4>Joki MLBB</h4>
+            <p>Rp 5.000</p>
+            <button onclick="addCart('Joki MLBB',5000)">+ Keranjang</button>
         </div>
     </div>
 
-    <h1 class="title-p">POPULER</h1>
-    <section id="populer" class="populer">
-        <div class="necro">
-        <div class="link">
-            <a href="#harga-mlbb">
-                    <img src="./images/images.jpg" alt="">
-                    <div class="judul-produk">Mobile Legend></div>
-            </a>
-        </div>
-        <div class="overlay" id="harga-mlbb">
-            <div class="popup">
-                <h2>JOKI RANK MOBILE LEGENDS</h2>
-                <a class="close" href="#populer">&times;</a>
-                <br>
-                <div class="content">
-                    Grend Master / Star:
-                    <br>    
-                    <span class="harga">Rp 4.000</span>
-                    <br>
-                    Epic / Star :
-                    <br>
-                    <span class="harga">Rp 5.000</span>
-                    <br>
-                    Legend / Star : 
-                    <br>
-                    <span class="harga">Rp 6.000</span>
-                    <br>
-                    Mytich / Star : 
-                    <br>
-                    <span class="harga">Rp 10.000</span>
-                    <br>
-                     Mythic Honor / Star:
-                    <br>
-                    <span class="harga">Rp 12.000</span>
-                    <br>
-                    Glory / Star :
-                    <br>
-                    <span class="harga">Rp 15.000</span>
-                    <br>
-                     Immortal / Star :
-                    <br>
-                    <span class="harga">Rp 20.000</span>
-                    <br>
-                     Full Grading  :
-                    <br>
-                    <span class="harga">Rp 200.000</span>
-                    <br>
-                    <a class="pesan" href="https://wa.me/6288808529621" 
-                    target="_blank" 
-                    rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
-                </div>
-            </div>
+    <div class="card">
+        <img src="images/Gemini_Generated_Image_mu3jhbmu3jhbmu3j.png">
+        <div class="card-body">
+            <h4>Necro Hax</h4>
+            <p>Rp 15.000</p>
+            <button onclick="addCart('Necro Hax',15000)">+ Keranjang</button>
         </div>
     </div>
 
-    <div class="necro">
-        <div class="link">
-            <a href="#harga-necro">
-                    <img src="./images/ff.png" alt="">
-                    <div class="judul-produk">Necro Hax</div>
-            </a>
-        </div>
-        <div class="overlay" id="harga-necro">
-            <div class="popup">
-                <h2>HARGA NECRO HAX</h2>
-                <a class="close" href="#populer">&times;</a>
-                <br>
-                <div class="content">
-                    1 Hari  : 
-                    <br>    
-                    <span class="harga">Rp 15.000</span>
-                    <br>
-                    3 Hari : 
-                    <br>
-                    <span class="harga">Rp 35.000</span>
-                    <br>
-                    7 Hari : 
-                    <br>
-                    <span class="harga">Rp 65.000</span>
-                    <br>
-                    30 Hari : 
-                    <br>
-                    <span class="harga">Rp 160.000</span>
-                    <br>
-                    
-                    <a class="pesan" href="https://wa.me/6288808529621" 
-                    target="_blank" 
-                    rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
-                </div>
-            </div>
+    <div class="card">
+        <img src="images/ff.png">
+        <div class="card-body">
+            <h4>Top Up Free Fire</h4>
+            <p>Rp 10.000</p>
+            <button onclick="addCart('Free Fire',10000)">+ Keranjang</button>
         </div>
     </div>
 
-    <div class="ff">
-        <div class="link">
-            <a href="#harga-ff">
-                    <img src="./images/ff.png" alt="">
-                    <div class="judul-produk">Free Fire</div>
-            </a>
-        </div>
-        <div class="overlay" id="harga-ff">
-            <div class="popup">
-                <h2>HARGA FREE FIRE</h2>
-                <a class="close" href="#populer">&times;</a>
-                <br>
-                <div class="content">
-                    70 Diamonds  : 
-                    <br>    
-                    <span class="harga">Rp 10.000</span>
-                    <br>
-                    140 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 20.000</span>
-                    <br>
-                    210 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    280 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 40.000</span>
-                    <br>
-                    355 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 50.000</span>
-                    <br>
-                    500 Diamond  : 
-                    <br>
-                    <span class="harga">Rp 70.000</span>
-                    <br>
-                    720 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 100.000</span>
-                    <br>
-                    1000 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 130.000</span>
-                    <br>
-                    M. Mingguan  : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    M. Bulanan   : 
-                    <br>
-                    <span class="harga">Rp 150.000</span>
-                    <br>
-                    <a class="pesan" href="https://wa.me/6282132873886" 
-                    target="_blank" 
-                    rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
+</section>
 
-    <div class="ff">
-        <div class="link">
-            <a href="#harga-ff">
-                    <img src="./images/ff.png" alt="">
-                    <div class="judul-produk">Free Fire</div>
-            </a>
-        </div>
-        <div class="overlay" id="harga-ff">
-            <div class="popup">
-                <h2>HARGA FREE FIRE</h2>
-                <a class="close" href="#populer">&times;</a>
-                <br>
-                <div class="content">
-                    70 Diamonds  : 
-                    <br>    
-                    <span class="harga">Rp 10.000</span>
-                    <br>
-                    140 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 20.000</span>
-                    <br>
-                    210 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    280 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 40.000</span>
-                    <br>
-                    355 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 50.000</span>
-                    <br>
-                    500 Diamond  : 
-                    <br>
-                    <span class="harga">Rp 70.000</span>
-                    <br>
-                    720 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 100.000</span>
-                    <br>
-                    1000 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 130.000</span>
-                    <br>
-                    M. Mingguan  : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    M. Bulanan   : 
-                    <br>
-                    <span class="harga">Rp 150.000</span>
-                    <br>
-                    <a class="pesan" href="https://wa.me/6282132873886" 
-                    target="_blank" 
-                    rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- SCRIPT -->
+<script>
+let cart = [];
+let total = 0;
 
-    <div class="ff">
-        <div class="link">
-            <a href="#harga-ff">
-                    <img src="./images/ff.png" alt="">
-                    <div class="judul-produk">Free Fire</div>
-            </a>
-        </div>
-        <div class="overlay" id="harga-ff">
-            <div class="popup">
-                <h2>HARGA FREE FIRE</h2>
-                <a class="close" href="#populer">&times;</a>
-                <br>
-                <div class="content">
-                    70 Diamonds  : 
-                    <br>    
-                    <span class="harga">Rp 10.000</span>
-                    <br>
-                    140 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 20.000</span>
-                    <br>
-                    210 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    280 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 40.000</span>
-                    <br>
-                    355 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 50.000</span>
-                    <br>
-                    500 Diamond  : 
-                    <br>
-                    <span class="harga">Rp 70.000</span>
-                    <br>
-                    720 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 100.000</span>
-                    <br>
-                    1000 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 130.000</span>
-                    <br>
-                    M. Mingguan  : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    M. Bulanan   : 
-                    <br>
-                    <span class="harga">Rp 150.000</span>
-                    <br>
-                    <a class="pesan" href="https://wa.me/6282132873886" 
-                    target="_blank" 
-                    rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
+function toggleCart(){
+    document.getElementById("cart").classList.toggle("show");
+}
 
-    <div class="ff">
-        <div class="link">
-            <a href="#harga-ff">
-                    <img src="./images/ff.png" alt="">
-                    <div class="judul-produk">Free Fire</div>
-            </a>
-        </div>
-        <div class="overlay" id="harga-ff">
-            <div class="popup">
-                <h2>HARGA FREE FIRE</h2>
-                <a class="close" href="#populer">&times;</a>
-                <br>
-                <div class="content">
-                    70 Diamonds  : 
-                    <br>    
-                    <span class="harga">Rp 10.000</span>
-                    <br>
-                    140 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 20.000</span>
-                    <br>
-                    210 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    280 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 40.000</span>
-                    <br>
-                    355 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 50.000</span>
-                    <br>
-                    500 Diamond  : 
-                    <br>
-                    <span class="harga">Rp 70.000</span>
-                    <br>
-                    720 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 100.000</span>
-                    <br>
-                    1000 Diamonds : 
-                    <br>
-                    <span class="harga">Rp 130.000</span>
-                    <br>
-                    M. Mingguan  : 
-                    <br>
-                    <span class="harga">Rp 30.000</span>
-                    <br>
-                    M. Bulanan   : 
-                    <br>
-                    <span class="harga">Rp 150.000</span>
-                    <br>
-                    <a class="pesan" href="https://wa.me/6282132873886" 
-                    target="_blank" 
-                    rel="noopener noreferrer"><img src="./images/whatsapp.png" alt="">Pesan Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
+function addCart(nama,harga){
+    cart.push({nama,harga});
+    total += harga;
+    renderCart();
+}
+
+function renderCart(){
+    let list = document.getElementById("cart-list");
+    list.innerHTML = "";
+
+    cart.forEach((item,i)=>{
+        list.innerHTML += `
+        <li>
+            ${item.nama}
+            <span>Rp ${item.harga}</span>
+            <button onclick="removeItem(${i})">x</button>
+        </li>`;
+    });
+
+    document.getElementById("total").innerText = total;
+    document.getElementById("cart-count").innerText = cart.length;
+}
+
+function removeItem(i){
+    total -= cart[i].harga;
+    cart.splice(i,1);
+    renderCart();
+}
+
+function checkout(){
+    let text = "Halo saya mau order:%0A%0A";
+    cart.forEach(item=>{
+        text += "- "+item.nama+" Rp "+item.harga+"%0A";
+    });
+    text += "%0ATotal: Rp "+total;
+
+    window.open("https://wa.me/6288808529621?text="+text);
+}
+</script>
+
 </body>
 </html>
